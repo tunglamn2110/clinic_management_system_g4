@@ -20,11 +20,11 @@ A web-based system designed to support clinic operations including patient manag
 
 | Name      | Role                              |
 | --------- | --------------------------------- |
-| Thu Dương | Business Analysis / Documentation |
-| Ngọc Anh  | System Design / Architecture      |
-| Tùng Lâm  | Backend Development               |
-| Kiều Trâm | Frontend Development              |
-| Bích Ngọc | Testing / QA                      |
+| Thu Dương ( leader) | Frontend Developmen, BA, System Architecture |
+| Ngọc Anh  | Full-stack Development             |
+| Tùng Lâm  | BA, Frontend Development, UX/UI Designer               |
+| Kiều Trâm | Frontend Development, UX/UI Designer, Tester    |
+| Bích Ngọc |  QA, System Architecture, Frontend Development                   |
 
 ---
 
