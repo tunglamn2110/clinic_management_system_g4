@@ -1,4 +1,4 @@
-# 🏥 Elysian Skin Clinic - Intergrated Treatment Plan & Appointment Mnaagement System
+# 🏥 Elysian Skin Clinic - Intergrated Treatment Plan & Appointment Management System
 
 **Capstone Project II**
 
