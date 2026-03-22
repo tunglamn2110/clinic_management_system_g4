@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Elysian Skin Clinic | Clinical Excellence in Skincare</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0db9f2",
+                        "background-light": "#FFFFFF",
+                        "background-dark": "#FFFFFF",
+                        "slate-heading": "#33475B",
+                        "cool-gray": "#64748B",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope"]
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        body { font-family: 'Manrope', sans-serif; background-color: #FFFFFF; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-white text-slate-900 font-display">
+<header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-100">
+<nav class="container mx-auto px-6 py-4 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-10 h-10 bg-primary rounded flex items-center justify-center">
+<span class="material-symbols-outlined text-white">medical_services</span>
+</div>
+<span class="text-xl font-bold tracking-tight text-slate-heading">Elysian <span class="text-primary font-extrabold">SKIN</span></span>
+</div>
+<div class="hidden lg:flex items-center gap-10">
+<a class="text-sm font-bold text-slate-heading hover:text-primary transition-colors" href="#">Home</a>
+<a class="text-sm font-bold text-slate-heading hover:text-primary transition-colors" href="#">Service List</a>
+<a class="text-sm font-bold text-slate-heading hover:text-primary transition-colors" href="#">About Us</a>
+<a class="text-sm font-bold text-slate-heading hover:text-primary transition-colors" href="#">Contact</a>
+</div>
+<div class="flex items-center gap-6">
+<a class="text-sm font-bold text-slate-heading hover:text-primary transition-colors" href="#">Sign In</a>
+<button class="bg-primary text-white px-7 py-2.5 rounded-full font-bold hover:shadow-lg hover:shadow-primary/20 transition-all">
+                Sign Up
+            </button>
+</div>
+</nav>
+</header>
+<section class="relative pt-16 lg:pt-28 pb-24">
+<div class="container mx-auto px-6">
+<div class="grid lg:grid-cols-2 gap-20 items-center">
+<div class="relative order-2 lg:order-1">
+<div class="absolute -top-6 -left-6 w-32 h-32 bg-primary/5 rounded-full blur-2xl"></div>
+<img alt="Modern Clinical Environment" class="rounded-2xl shadow-xl relative z-10 w-full object-cover aspect-[4/5]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPyOnPbW-qucsPK_YvPczW3Q2DdYIecstcOlVMFC-k1ot4y0h4mVVTDX6iGhz3zKHr4K9Y4LqcRoE-fq4fVPSSimy52oNgoFQIHGp_J03wSF67IiOl3gdZo3ZyAkEx4ICLB3HQ2yTj8IYEQ7-n_F7n0mQ7LLVu0hKsMa7zEaHHYQkjEot34vpSfQ8rSzKMfcy9wMtxlw7bVaUrIqH5z8FyPgX8WCN1LE2rIjz1jrNg3Z4Fzlx27431EOryp8HAZUNvYKCW8z1q9Os"/>
+<div class="absolute -bottom-8 -right-8 bg-white p-8 rounded-xl shadow-2xl z-20 border border-slate-100 hidden md:block">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-3xl">verified_user</span>
+</div>
+<div>
+<p class="text-[10px] font-black uppercase tracking-[0.2em] text-primary">Certified Quality</p>
+<p class="font-bold text-slate-heading text-lg">ISO 9001 Facility</p>
+</div>
+</div>
+</div>
+</div>
+<div class="space-y-10 order-1 lg:order-2">
+<div class="inline-flex items-center gap-2 px-4 py-1.5 bg-slate-50 border border-slate-100 rounded-full">
+<span class="w-2 h-2 bg-primary rounded-full"></span>
+<span class="text-xs font-bold text-slate-heading uppercase tracking-widest">Medical Grade Excellence</span>
+</div>
+<h1 class="text-5xl lg:text-7xl font-extrabold text-slate-heading leading-[1.1]">
+                    Your Skin Journey, <br/><span class="text-primary">Clinically Guided.</span>
+</h1>
+<p class="text-lg text-cool-gray leading-relaxed max-w-xl">
+                    Structured treatment plans designed by leading dermatologists and tracked session by session with high-resolution diagnostic imaging for measurable, lasting results.
+                </p>
+<div class="flex flex-wrap gap-5 pt-4">
+<button class="bg-primary text-white px-10 py-5 rounded-full font-bold text-lg hover:shadow-xl hover:shadow-primary/30 transition-all">
+                        Start Your Skin Plan
+                    </button>
+<button class="border-2 border-slate-200 text-slate-heading px-10 py-5 rounded-full font-bold text-lg hover:border-primary hover:text-primary transition-all">
+                        Explore Treatments
+                    </button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-24 bg-slate-50/50">
+<div class="container mx-auto px-6">
+<div class="text-center mb-20">
+<h2 class="text-4xl font-extrabold text-slate-heading">The Elysian Protocol</h2>
+<div class="w-20 h-1 bg-primary mx-auto mt-6"></div>
+<p class="text-cool-gray mt-6 max-w-2xl mx-auto text-lg">A scientifically-backed, data-driven pathway to optimal skin health and cellular rejuvenation.</p>
+</div>
+<div class="grid md:grid-cols-3 gap-16">
+<div class="text-center group bg-white p-10 rounded-3xl border border-slate-100 shadow-sm hover:shadow-md transition-all">
+<div class="w-24 h-24 bg-primary/5 rounded-2xl flex items-center justify-center mx-auto mb-8 group-hover:bg-primary transition-all duration-300">
+<span class="material-symbols-outlined text-5xl text-primary group-hover:text-white">fingerprint</span>
+</div>
+<h3 class="text-2xl font-bold mb-4 text-slate-heading">1. Skin Assessment</h3>
+<p class="text-cool-gray leading-relaxed">Comprehensive digital face scans to identify underlying conditions, UV damage, and hydration baseline metrics.</p>
+</div>
+<div class="text-center group bg-white p-10 rounded-3xl border border-slate-100 shadow-sm hover:shadow-md transition-all">
+<div class="w-24 h-24 bg-primary/5 rounded-2xl flex items-center justify-center mx-auto mb-8 group-hover:bg-primary transition-all duration-300">
+<span class="material-symbols-outlined text-5xl text-primary group-hover:text-white">assignment_turned_in</span>
+</div>
+<h3 class="text-2xl font-bold mb-4 text-slate-heading">2. Personalized Plan</h3>
+<p class="text-cool-gray leading-relaxed">A custom medical roadmap detailing every clinical intervention, wavelength selection, and session objective.</p>
+</div>
+<div class="text-center group bg-white p-10 rounded-3xl border border-slate-100 shadow-sm hover:shadow-md transition-all">
+<div class="w-24 h-24 bg-primary/5 rounded-2xl flex items-center justify-center mx-auto mb-8 group-hover:bg-primary transition-all duration-300">
+<span class="material-symbols-outlined text-5xl text-primary group-hover:text-white">monitoring</span>
+</div>
+<h3 class="text-2xl font-bold mb-4 text-slate-heading">3. Progress Tracking</h3>
+<p class="text-cool-gray leading-relaxed">Session-by-session data logging and polarized photo documentation to verify physiological improvements.</p>
+</div>
+</div>
+</div>
+</section>
+<section class="py-24 bg-white">
+<div class="container mx-auto px-6">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">
+<div class="max-w-xl">
+<h2 class="text-4xl font-extrabold text-slate-heading mb-4">Service List</h2>
+<p class="text-cool-gray text-lg">Precision medical therapies utilizing state-of-the-art clinical technology for targeted skin transformation.</p>
+</div>
+<a class="group text-primary font-bold flex items-center gap-2 hover:gap-4 transition-all" href="#">
+                View Full Menu <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+</div>
+<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+<div class="bg-white rounded-2xl overflow-hidden border border-slate-100 hover:shadow-2xl transition-all duration-500 group">
+<div class="h-64 overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7NodBa1UePjGVp5ERMypTbH9CsPOkX29j5vrOYM7VnyIbIP573pRE7176Px7Ae1BzALxVVQYqWW0Ak9Ojfz1_zKnxxfaHuUS-Pq9-Z9Rjnhf8BMtXY88smHrf3v064nqKNdjJ1Tj2l6we64FLPr_zgY4tmJeKiZVFMkQ3CpqJ0aRsiPRp1-vIsIB0JITQ2M1MB7dIHy--E4-Q87yNCDYclZly0GKF2ndge4327ZUdCNUSZEwwed0pSwGg212pFU04NgZ2KJOd6WA"/>
+</div>
+<div class="p-8">
+<h4 class="font-extrabold text-xl text-slate-heading mb-3">Hydra Renewal</h4>
+<p class="text-sm text-cool-gray mb-6 leading-relaxed">Deep cellular hydration and detoxification using advanced vortex technology for immediate radiance.</p>
+<button class="text-primary text-sm font-bold border-b-2 border-primary/20 hover:border-primary transition-all pb-1 uppercase tracking-widest">Clinical Details</button>
+</div>
+</div>
+<div class="bg-white rounded-2xl overflow-hidden border border-slate-100 hover:shadow-2xl transition-all duration-500 group">
+<div class="h-64 overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPUDDkxSGjYuXvX914I4xm-ixZNbKjWDwdkm0xcxT-GIhNdvmaCRffhhB7TpNhN-hj5VJsILRHwTWGH2h04ver45rfzs1rtAPJDWvjeMEW0a8sPkKKLCG5myGlcjsyVb1dmES5fMZ0vdzbRynRFOUckwVIB254BXD_wDJqL89p2J3NE-4s9BQRNbf2nYrNmGlUy8vsqnp48V6I7JH_0mF98eENtoeGajhsxwxJkaOerwReROnnIsG6tt43zNmw1_N_ARhDE8oqGto"/>
+</div>
+<div class="p-8">
+<h4 class="font-extrabold text-xl text-slate-heading mb-3">Acne Therapy</h4>
+<p class="text-sm text-cool-gray mb-6 leading-relaxed">Medical-grade targeted clearing for active acne through high-intensity narrow-band light therapy.</p>
+<button class="text-primary text-sm font-bold border-b-2 border-primary/20 hover:border-primary transition-all pb-1 uppercase tracking-widest">Clinical Details</button>
+</div>
+</div>
+<div class="bg-white rounded-2xl overflow-hidden border border-slate-100 hover:shadow-2xl transition-all duration-500 group">
+<div class="h-64 overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCf3NhIyjVguXrIDH8gJErQz00BPNVt5OGF1VevrfLuh3USiQ9_OJUOQHbPGR37kmn94seV8RKOek8o0U4eYoHCerBQ_zaRt0KWluu-MUnsti1Z9SUUC1cYYXdpMAr4X9CMukSoOVtecotDZvRIDAG-254NDQcfd8_3P88ZXQacXTQwGeusXTy3blYqKeDhr0pm4K_F2B06YTuH7fEaJB92cdrMO_KTLIAX7IqOV4lYi6zMB3rAy7GjUuAnOu2IV-kNCsdR0gU1Y3A"/>
+</div>
+<div class="p-8">
+<h4 class="font-extrabold text-xl text-slate-heading mb-3">Fractional Laser</h4>
+<p class="text-sm text-cool-gray mb-6 leading-relaxed">Advanced non-ablative resurfacing to stimulate collagen and address deep texture irregularities.</p>
+<button class="text-primary text-sm font-bold border-b-2 border-primary/20 hover:border-primary transition-all pb-1 uppercase tracking-widest">Clinical Details</button>
+</div>
+</div>
+<div class="bg-white rounded-2xl overflow-hidden border border-slate-100 hover:shadow-2xl transition-all duration-500 group">
+<div class="h-64 overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7VCBFCrKk83LlrerjjaWna9_mJNyoJ3BIJV5CSJLcO0vEfpVncUxzYIhLStiEC8q_ELQiz81V4-fOVLslLAjkJu1S-V3xxfPqB_8xLftWrSnJMg0nsn3-NU7gNSn-8GCY2gPBFrjdMII0I-Ys60gqfvNUsgmzSYF9KlzxTZ_xGF-Y-eXD8P3ANJ0ngZJILNfvFHOwoPvvoHLYVO_9s8b7JN2o_4CyU06oHu23uQhXOvlLJbuqpeTJ8dQQEpaizQ53Y_y8m7P8z-M"/>
+</div>
+<div class="p-8">
+<h4 class="font-extrabold text-xl text-slate-heading mb-3">Pigment Control</h4>
+<p class="text-sm text-cool-gray mb-6 leading-relaxed">Scientific protocols targeting melanin clusters for persistent hyperpigmentation and melasma correction.</p>
+<button class="text-primary text-sm font-bold border-b-2 border-primary/20 hover:border-primary transition-all pb-1 uppercase tracking-widest">Clinical Details</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-24 bg-slate-50/50">
+<div class="container mx-auto px-6">
+<div class="grid lg:grid-cols-2 gap-24 items-center">
+<div class="grid grid-cols-2 gap-6 relative">
+<div class="space-y-6">
+<div class="rounded-2xl overflow-hidden shadow-lg border-4 border-white">
+<img alt="Baseline Assessment" class="w-full aspect-square object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRemThwRIsoRHnHRpSJcYEEw6N0EdsNeTOzRlKfpy8uIeuBB94x_s-fVAFWZHWZOGemqCh-ZJhzKXK1fDFBaHdoJJhmTHi2hq-XkyDqIjWETs7ECilO477Y1UAUpZd_uQSxKNW2oi3cYWvhRejAhOfG72-EeKYHey9uTPnZt75yACFhh0iqxgIk7duP6U1CSB894ft0yguUpdpnV490YT0MfLFt3J791ig3mrfWrXNUdCjjRTksnkANS7ZwopIZKTScZol-K8JpUI"/>
+<div class="bg-slate-700 text-white text-[10px] font-black text-center py-3 uppercase tracking-[0.2em]">Initial Assessment</div>
+</div>
+</div>
+<div class="space-y-6 pt-12">
+<div class="rounded-2xl overflow-hidden shadow-lg border-4 border-primary/20">
+<img alt="Final Progress" class="w-full aspect-square object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBN0Uj2m6OAOQ1FABFillQ-6RDf9r_7GeLZhkGS1NHj9yxIGAMUpOb9pELD3scqqSlBhxVGBtfSTAswi0H9zxlprJTQFrO7pzhWYNr_4X6b5555b5WWnpXtwFsfww8vMB-IrIelMTe8xrtRRTFLqJO3gxa1oxucbajjmrtrFEMklulYnsnozRVwn_7QSqwZptsbOWMqrpMirSgMZmZEcsfqOTZzOi9WRcU4Qyw_LULlKFQCnmHdg-7ArlpOBwiU0wu2ecNa0YgXnmY"/>
+<div class="bg-primary text-white text-[10px] font-black text-center py-3 uppercase tracking-[0.2em]">After 8 Sessions</div>
+</div>
+</div>
+<div class="absolute -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-primary/5 rounded-full blur-3xl"></div>
+</div>
+<div class="space-y-10">
+<div class="inline-block px-5 py-2 bg-primary/10 text-primary font-bold rounded-full text-xs uppercase tracking-widest border border-primary/20">Patient Case Study</div>
+<h2 class="text-4xl lg:text-5xl font-extrabold text-slate-heading leading-tight italic">
+                    "The diagnostic data changed everything. I could finally see the clinical proof of my skin's recovery."
+                </h2>
+<div class="flex items-center gap-6">
+<div class="w-16 h-16 rounded-full bg-slate-200 overflow-hidden">
+<img alt="Sarah Jennings" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYp5D-ze4F_EdBEiUVvjJEwjIlKt0P0zZyOTj4wAhZaJsQyf1rh_BLMxBL93EiwNI68PS5wnGqYBKJ4clLcmNJLhWXeDIvQcj2xu3w1ITQnGW_N0BvdqoV3gqyNoTAXBLB_FEtl6sdcoa3P09Y4YcvBxo5UaA_7ycmEfn4Km4VtxWdwQBggzmLUI2Lgp2rDSso1fi5UMdkbOsuQkHpbz0m24Y8NZi6qqGROr-xLPC4hIU1vf2z8FXVe-tz_mbaSWBMmbH7MgfA6MA"/>
+</div>
+<div>
+<p class="font-black text-slate-heading text-lg">Sarah Jennings</p>
+<p class="text-sm text-cool-gray font-bold">Patient Protocol: Advanced Anti-Aging • Year 1</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-24 bg-white">
+<div class="container mx-auto px-6">
+<div class="text-center mb-20">
+<h2 class="text-4xl font-extrabold text-slate-heading">Our Board-Certified Experts</h2>
+<div class="w-20 h-1 bg-primary mx-auto mt-6"></div>
+<p class="text-cool-gray mt-6 max-w-2xl mx-auto text-lg">Leading medical professionals dedicated to clinical excellence and aesthetic precision.</p>
+</div>
+<div class="grid md:grid-cols-3 gap-12">
+<div class="bg-white p-10 rounded-3xl text-center border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
+<div class="w-48 h-48 mx-auto mb-8 rounded-full overflow-hidden border-8 border-slate-50 shadow-inner">
+<img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAuf5F4sNrirb52J6x6JK7vOWMPToQPryOUyJR3q7NxZdYqyF9Y6WR4rlh0zDwjbXKTJx-wbbxg1Mdr_PwnNhD3oqvJQUDfKtB6ytsfJ5K4nFSlM6_pNKzzcMtI-bOiXrrj0ji4Hg4gJ_tu_Tzou_sOOhjy643m2_X-FI8eg4vMzS0g7LzFWhK-dmCF_Y8DsgOOI1PXvaYYz9MZmQCLsziPZcsaK4iWZpqowRIc5LnPfdHRHIMpT0Wte9pT5QNX0jFWPhPI7jGHHf4"/>
+</div>
+<h4 class="font-extrabold text-2xl text-slate-heading mb-2">Dr. Elena Vance</h4>
+<p class="text-primary font-bold text-sm mb-6 uppercase tracking-widest">Medical Director</p>
+<p class="text-cool-gray leading-relaxed text-sm">Specializing in fractional laser therapy and cellular rejuvenation with 15+ years of clinical research.</p>
+</div>
+<div class="bg-white p-10 rounded-3xl text-center border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
+<div class="w-48 h-48 mx-auto mb-8 rounded-full overflow-hidden border-8 border-slate-50 shadow-inner">
+<img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4AACt2GPi6t5-aGkAhKZZsl3PbjIHUKFBtu_RMzTysiEOgWEP83AVHwIrFliiJS-RblCoeeM4tDPc1LkC4dBvUxd1OVbZrOap9bV6X0xe4kenOZxzEHKM4A-rwtelIrv9wNp8VA9jf_bPP7F9c0sGbT3F-OfO4bcilVmnDmpASgJPENR8UPVOefJzeETgaWABYaOsw-9ex7CgkyiJYgX3pQ29cAMKtfEElzS05jwkwSnD_gWj6J5jpy1U0Vl9gCyi6eetrgF9OTE"/>
+</div>
+<h4 class="font-extrabold text-2xl text-slate-heading mb-2">Dr. Marcus Thorne</h4>
+<p class="text-primary font-bold text-sm mb-6 uppercase tracking-widest">Lead Dermatologist</p>
+<p class="text-cool-gray leading-relaxed text-sm">Expert in medical-grade skincare formulations and advanced diagnostic imaging technology.</p>
+</div>
+<div class="bg-white p-10 rounded-3xl text-center border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
+<div class="w-48 h-48 mx-auto mb-8 rounded-full overflow-hidden border-8 border-slate-50 shadow-inner">
+<img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTr1y6GbyN2FP5jpKSTg5SNNZeaC2KJrx7Np_etz3s4ZqP0hFoIVfT0GGqraRuKCrNrJviJAPL0p_FojBR6mVcOmXduH5YtbvznEQ_LlXc987V-Wg9lnXSzcNltsZBVWlw5l9kBb-t5YNqdZJ6lR_ajbt8AHiQfm2cf3vpSr-ee6a6Qw-WCRyqO3yZD-gswC4NZGAAWevFIHE2FRabV7eIEZ8ZktDOW-PbzTu0tSZmbbDbdhzXIIFegqQtMpeqYAZAZZKpjgiVY6o"/>
+</div>
+<h4 class="font-extrabold text-2xl text-slate-heading mb-2">Sarah Lin, NP</h4>
+<p class="text-primary font-bold text-sm mb-6 uppercase tracking-widest">Senior Practitioner</p>
+<p class="text-cool-gray leading-relaxed text-sm">Specialist in integrated medical treatment plans and persistent acne management protocols.</p>
+</div>
+</div>
+</div>
+</section>
+<section class="py-24 bg-slate-50/50">
+<div class="container mx-auto px-6 max-w-3xl">
+<h2 class="text-4xl font-extrabold text-center mb-16 text-slate-heading">Clinical Inquiry</h2>
+<div class="space-y-6">
+<div class="bg-white border border-slate-100 rounded-2xl p-7 shadow-sm">
+<div class="flex justify-between items-center cursor-pointer group">
+<h4 class="font-bold text-lg text-slate-heading">How do you track clinical skin progress?</h4>
+<span class="material-symbols-outlined text-primary group-hover:scale-125 transition-transform">add_circle</span>
+</div>
+</div>
+<div class="bg-white border border-slate-100 rounded-2xl p-7 shadow-sm">
+<div class="flex justify-between items-center cursor-pointer group">
+<h4 class="font-bold text-lg text-slate-heading">What occurs during the initial assessment?</h4>
+<span class="material-symbols-outlined text-primary group-hover:scale-125 transition-transform">add_circle</span>
+</div>
+</div>
+<div class="bg-white border border-slate-100 rounded-2xl p-7 shadow-sm">
+<div class="flex justify-between items-center cursor-pointer group">
+<h4 class="font-bold text-lg text-slate-heading">Can I adjust my plan mid-journey?</h4>
+<span class="material-symbols-outlined text-primary group-hover:scale-125 transition-transform">add_circle</span>
+</div>
+</div>
+<div class="bg-white border border-slate-100 rounded-2xl p-7 shadow-sm">
+<div class="flex justify-between items-center cursor-pointer group">
+<h4 class="font-bold text-lg text-slate-heading">Is medical-grade home care mandatory?</h4>
+<span class="material-symbols-outlined text-primary group-hover:scale-125 transition-transform">add_circle</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<footer class="bg-slate-900 text-white pt-24 pb-12">
+<div class="container mx-auto px-6">
+<div class="grid lg:grid-cols-4 gap-16 mb-20">
+<div class="space-y-8">
+<div class="flex items-center gap-2">
+<div class="w-10 h-10 bg-primary rounded flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-xl">medical_services</span>
+</div>
+<span class="text-2xl font-black tracking-tight uppercase">Elysian <span class="text-primary">Skin</span></span>
+</div>
+<p class="text-slate-400 text-sm leading-relaxed">
+                    Setting the standard for clinical dermatology with precise diagnostic tracking and evidence-based results.
+                </p>
+<div class="flex gap-5">
+<a class="w-11 h-11 bg-slate-800 rounded-full flex items-center justify-center hover:bg-primary transition-all" href="#">
+<svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"></path></svg>
+</a>
+<a class="w-11 h-11 bg-slate-800 rounded-full flex items-center justify-center hover:bg-primary transition-all" href="#">
+<svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path></svg>
+</a>
+</div>
+</div>
+<div>
+<h5 class="font-bold text-lg mb-8">Navigation</h5>
+<ul class="space-y-4 text-slate-400 text-sm font-medium">
+<li><a class="hover:text-primary transition-colors" href="#">Home</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Service List</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">About Us</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Contact Us</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-bold text-lg mb-8">Facility</h5>
+<ul class="space-y-5 text-slate-400 text-sm">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-xl">location_on</span>
+<span>88 Clinical Way, Suite 402<br/>Medical District, NY 10012</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-xl">call</span>
+<span>+1 (800) ELYSIAN</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-xl">mail</span>
+<span>medical@elysianskin.com</span>
+</li>
+</ul>
+</div>
+<div>
+<h5 class="font-bold text-lg mb-8">Clinical Newsletter</h5>
+<p class="text-slate-400 text-sm mb-6">Receive curated research and clinical updates on skin health.</p>
+<div class="relative">
+<input class="w-full bg-slate-800 border-none rounded-lg py-4 px-5 text-sm focus:ring-2 focus:ring-primary outline-none transition-all" placeholder="Medical Email" type="email"/>
+<button class="absolute right-2 top-2 bottom-2 bg-primary text-white px-5 rounded-md text-xs font-black uppercase tracking-widest">Join</button>
+</div>
+</div>
+</div>
+<div class="border-t border-slate-800 pt-10 flex flex-col md:flex-row justify-between items-center gap-6 text-[10px] text-slate-500 font-black uppercase tracking-[0.2em]">
+<p>© 2024 Elysian Skin Clinic. All Medical Procedures Regulated.</p>
+<div class="flex gap-10">
+<a class="hover:text-primary" href="#">Privacy Policy</a>
+<a class="hover:text-primary" href="#">Terms of Clinical Service</a>
+</div>
+</div>
+</div>
+</footer>
+
+</body></html>
+Bạn đã gửi

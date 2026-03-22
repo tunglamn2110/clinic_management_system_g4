@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+
+<meta charset="utf-8"/>
+
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+
+<title>Elysian - Service Catalog Management</title>
+
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+
+<script id="tailwind-config">
+
+        tailwind.config = {
+
+            darkMode: "class",
+
+            theme: {
+
+                extend: {
+
+                    colors: {
+
+                        "primary": "#0db9f2",
+
+                        "background-light": "#f5f8f8",
+
+                        "background-dark": "#101e22",
+
+                    },
+
+                    fontFamily: {
+
+                        "display": ["Manrope"]
+
+                    },
+
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+
+                },
+
+            },
+
+        }
+
+    </script>
+
+<style type="text/tailwindcss">
+
+        body { font-family: 'Manrope', sans-serif; }
+
+        .custom-scrollbar::-webkit-scrollbar {
+
+            width: 4px;
+
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-track {
+
+            background: transparent;
+
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+
+            background: #e2e8f0;
+
+            border-radius: 10px;
+
+        }
+
+        .modal-overlay {
+
+            background-color: rgba(15, 23, 42, 0.5);
+
+            backdrop-filter: blur(4px);
+
+        }
+
+        .service-card:hover .action-overlay {
+
+            opacity: 1;
+
+        }
+
+        .toggle-checkbox:checked {
+
+            @apply right-0 border-primary bg-primary;
+
+        }
+
+        .toggle-checkbox:checked + .toggle-label {
+
+            @apply bg-primary/20;
+
+        }
+
+    </style>
+
+</head>
+
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 antialiased overflow-hidden">
+
+<div class="flex h-screen w-full">
+
+<aside class="w-64 flex flex-col bg-white dark:bg-slate-900 border-r border-slate-200 dark:border-slate-800 shrink-0">
+
+<div class="p-6 flex items-center gap-3">
+
+<div class="size-10 rounded-lg bg-primary flex items-center justify-center text-white">
+
+<span class="material-symbols-outlined text-2xl">medical_services</span>
+
+</div>
+
+<div>
+
+<h1 class="text-slate-900 dark:text-white font-bold text-lg leading-none">Elysian</h1>
+
+<p class="text-slate-500 dark:text-slate-400 text-xs font-medium uppercase tracking-wider mt-1">Skin Clinic</p>
+
+</div>
+
+</div>
+
+<nav class="flex-1 px-4 space-y-1 mt-4">
+
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors" href="#">
+
+<span class="material-symbols-outlined text-[22px]">dashboard</span>
+
+<span class="text-sm font-semibold">Dashboard</span>
+
+</a>
+
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors" href="#">
+
+<span class="material-symbols-outlined text-[22px]">calendar_today</span>
+
+<span class="text-sm font-semibold">Calendar</span>
+
+</a>
+
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors" href="#">
+
+<span class="material-symbols-outlined text-[22px]">person</span>
+
+<span class="text-sm font-semibold">Patients</span>
+
+</a>
+
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-primary/10 text-primary border border-primary/20 transition-colors" href="#">
+
+<span class="material-symbols-outlined text-[22px] fill-1">clinical_notes</span>
+
+<span class="text-sm font-semibold">Service Catalog</span>
+
+</a>
+
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors" href="#">
+
+<span class="material-symbols-outlined text-[22px]">groups</span>
+
+<span class="text-sm font-semibold">Specialists</span>
+
+</a>
+
+</nav>
+
+<div class="p-4 mt-auto border-t border-slate-200 dark:border-slate-800">
+
+<div class="flex items-center gap-3 px-3 py-4">
+
+<div class="size-10 rounded-full bg-slate-200 dark:bg-slate-700 overflow-hidden">
+
+<img alt="Medical administrator" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfnX0VSwBrJbSLpt9soNQ8oy3ZA62Qu9KbQqezl5KFyyEIgsCqDA8-NKV3Euv_ur8RE4PpKuKJyFzktViq7irDqIMdpPnmfnZvUJ9tG1N-IyS1YD6P07Fhcb496-5_AeKNlJKcKwyMjLNxHF-BadC1wfVaZgMncbfrIV8k5d-K90lPlPjY_xeAoaPINqkAWd3Gyi2Jv3443KIXxWdsgW1uEagsyxwg1ZHezcwptoxBRRGe6Yq4GGuKakqbXnRtkd7-naHJtI3K5BQ"/>
+
+</div>
+
+<div class="flex-1 min-w-0">
+
+<p class="text-sm font-bold truncate">Dr. Aris Thorne</p>
+
+<p class="text-xs text-slate-500 truncate">Clinical Director</p>
+
+</div>
+
+<span class="material-symbols-outlined text-slate-400 cursor-pointer">settings</span>
+
+</div>
+
+</div>
+
+</aside>
+
+<main class="flex-1 flex flex-col min-w-0 bg-background-light dark:bg-background-dark overflow-y-auto custom-scrollbar">
+
+<header class="h-16 flex items-center justify-between px-8 border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shrink-0 sticky top-0 z-10">
+
+<div class="flex items-center gap-4">
+
+<h2 class="text-xl font-bold text-slate-900 dark:text-white">Service Catalog</h2>
+
+</div>
+
+<div class="flex items-center gap-4">
+
+<div class="relative group">
+
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-primary transition-colors text-xl">search</span>
+
+<input class="w-64 h-10 pl-10 pr-4 bg-slate-100 dark:bg-slate-800 border-none rounded-lg text-sm focus:ring-2 focus:ring-primary transition-all" placeholder="Search services..." type="text"/>
+
+</div>
+
+<div class="h-8 w-px bg-slate-200 dark:border-slate-700 mx-2"></div>
+
+<button class="flex items-center gap-2 px-6 py-2 bg-primary text-slate-900 font-bold rounded-full shadow-lg shadow-primary/20 hover:scale-[1.02] active:scale-[0.98] transition-all" onclick="document.getElementById('add-service-modal').classList.remove('hidden')">
+
+<span class="material-symbols-outlined text-xl">add</span>
+
+                    Add New Service
+
+                </button>
+
+</div>
+
+</header>
+
+<div class="p-8">
+
+<div class="mb-8">
+
+<h3 class="text-2xl font-bold text-slate-900 dark:text-white">Service Gallery</h3>
+
+<p class="text-slate-500">Manage and preview clinical services for the public catalog.</p>
+
+</div>
+
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+
+<div class="group service-card bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 relative">
+
+<div class="aspect-[4/3] w-full relative overflow-hidden">
+
+<img alt="Hydra Renewal Facial" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0IxcJWMR-p8dBJoOsXm1W0iObQeyox8k0R0xDbK_JMZZMPr0TlVsuYGbHf0xa9NFibnRDM7PRi_FcExQ883_Ym420m5EtcI-gWV29A2Camdl7v3OjLKmpNOMp4ySykTp_uZpzqMvw2nsfXUJ-Y1kmCGzbfQQkuWSNzC-t_Fd1Nh96xks_BvvDJVvO2Z9tSulv5BzCf7u4H5yNmgxDDY4RqDSu3UWf_eHBN_Xte1J2WGGO6R4dOFYivfYjmLviTQNRiaI5Jtdjsps"/>
+
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-3">
+
+<button class="size-10 rounded-full bg-white text-slate-900 flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
+
+<span class="material-symbols-outlined text-xl">edit</span>
+
+</button>
+
+<button class="size-10 rounded-full bg-white text-slate-900 flex items-center justify-center hover:bg-red-500 hover:text-white transition-colors">
+
+<span class="material-symbols-outlined text-xl">delete</span>
+
+</button>
+
+</div>
+
+</div>
+
+<div class="p-5 space-y-4">
+
+<div class="flex justify-between items-start">
+
+<div>
+
+<span class="px-2 py-0.5 rounded-md text-[10px] font-bold uppercase tracking-wider bg-blue-100 text-blue-600 dark:bg-blue-900/30 dark:text-blue-400">Anti-aging</span>
+
+<h4 class="font-bold text-slate-900 dark:text-white mt-1 group-hover:text-primary transition-colors">Hydra Renewal Facial</h4>
+
+</div>
+
+<div class="relative inline-block w-10 align-middle select-none transition duration-200 ease-in">
+
+<input checked="" class="toggle-checkbox absolute block w-5 h-5 rounded-full bg-white border-4 border-slate-300 appearance-none cursor-pointer focus:ring-0 outline-none transition-all duration-200" id="toggle1" name="toggle" type="checkbox"/>
+
+<label class="toggle-label block overflow-hidden h-5 rounded-full bg-slate-300 cursor-pointer" for="toggle1"></label>
+
+</div>
+
+</div>
+
+<div class="flex items-center justify-between pt-2 border-t border-slate-100 dark:border-slate-800">
+
+<div class="flex flex-col">
+
+<span class="text-[10px] text-slate-400 font-bold uppercase tracking-tighter">Duration</span>
+
+<span class="text-sm font-semibold text-slate-700 dark:text-slate-300">60 mins</span>
+
+</div>
+
+<div class="flex flex-col text-right">
+
+<span class="text-[10px] text-slate-400 font-bold uppercase tracking-tighter">Price (VND)</span>
+
+<span class="text-sm font-extrabold text-primary">1.200.000</span>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="group service-card bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 relative">
+
+<div class="aspect-[4/3] w-full relative overflow-hidden">
+
+<img alt="Intensive Acne Therapy" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuARNx85v_s4vlb-yIGjW-vs9toh1JRO_okMFoKP5VZt8t34fYN-MwH85_eSPEvICjRqgQ5w0NY4SrwrcpmR70WehwgVwEBTjPCNFip1JNTsBepcFBpDC3myOubpDhDcSxaQonMxGP5XjmsmeBlBtTKxCFR-PxBCAP91vq4fFNdn0fMeSAJCsoVMqfiDx_FE_8MHBr4V07Nk78Zz3qvj2aZWTxFOeTaW_vf_TlVDqZ4_wAwhhMkTFdOfg4jqH1ulIh-QO4vnrYMotkk"/>
+
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-3">
+
+<button class="size-10 rounded-full bg-white text-slate-900 flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
+
+<span class="material-symbols-outlined text-xl">edit</span>
+
+</button>
+
+<button class="size-10 rounded-full bg-white text-slate-900 flex items-center justify-center hover:bg-red-500 hover:text-white transition-colors">
+
+<span class="material-symbols-outlined text-xl">delete</span>
+
+</button>
+
+</div>
+
+</div>
+
+<div class="p-5 space-y-4">
+
+<div class="flex justify-between items-start">
+
+<div>
+
+<span class="px-2 py-0.5 rounded-md text-[10px] font-bold uppercase tracking-wider bg-teal-100 text-teal-600 dark:bg-teal-900/30 dark:text-teal-400">Acne &amp; Clarity</span>
+
+<h4 class="font-bold text-slate-900 dark:text-white mt-1 group-hover:text-primary transition-colors">Intensive Acne Therapy</h4>
+
+</div>
+
+<div class="relative inline-block w-10 align-middle select-none transition duration-200 ease-in">
+
+<input checked="" class="toggle-checkbox absolute block w-5 h-5 rounded-full bg-white border-4 border-slate-300 appearance-none cursor-pointer focus:ring-0 outline-none transition-all duration-200" id="toggle2" name="toggle" type="checkbox"/>
+
+<label class="toggle-label block overflow-hidden h-5 rounded-full bg-slate-300 cursor-pointer" for="toggle2"></label>
+
+</div>
+
+</div>
+
+<div class="flex items-center justify-between pt-2 border-t border-slate-100 dark:border-slate-800">
+
+<div class="flex flex-col">
+
+<span class="text-[10px] text-slate-400 font-bold uppercase tracking-tighter">Duration</span>
+
+<span class="text-sm font-semibold text-slate-700 dark:text-slate-300">45 mins</span>
+
+</div>
+
+<div class="flex flex-col text-right">
+
+<span class="text-[10px] text-slate-400 font-bold uppercase tracking-tighter">Price (VND)</span>
+
+<span class="text-sm font-extrabold text-primary">850.000</span>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="group service-card bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 relative">
+
+<div class="aspect-[4/3] w-full relative overflow-hidden">
+
+<img alt="Chemical Peel" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMIaCKPhIrkLdfSCTrCbQmLPGM4m67kxZIODENd6uveFGFWvkRiLTOJKShtPlFwJI6BdjET6yXRaYS7TCcdd-lkCHFCq-Xy86WC6Oq7-xltGQgAFbjNwEL7hlFxYAYrrIieljU0GcaquY5mKAe5ygImgDdgArafA-vw8NhxmCJqqJfidGrjoyJGNDywg4caOSWmcq6Ns13UDgB-GlwqQIuuw0bT93xThlLW-hzT66BhnEyiqepE63pU5YJoQdI190_c763BSzeMs4"/>
+
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-3">
+
+<button class="size-10 rounded-full bg-white text-slate-900 flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
+
+<span class="material-symbols-outlined text-xl">edit</span>
+
+</button>
+
+<button class="size-10 rounded-full bg-white text-slate-900 flex items-center justify-center hover:bg-red-500 hover:text-white transition-colors">
+
+<span class="material-symbols-outlined text-xl">delete</span>
+
+</button>
+
+</div>
+
+</div>
+
+<div class="p-5 space-y-4">
+
+<div class="flex justify-between items-start">
+
+<div>
+
+<span class="px-2 py-0.5 rounded-md text-[10px] font-bold uppercase tracking-wider bg-purple-100 text-purple-600 dark:bg-purple-900/30 dark:text-purple-400">Rejuvenation</span>
+
+<h4 class="font-bold text-slate-900 dark:text-white mt-1 group-hover:text-primary transition-colors">Chemical Peel (Medium)</h4>
+
+</div>
+
+<div class="relative inline-block w-10 align-middle select-none transition duration-200 ease-in">
+
+<input class="toggle-checkbox absolute block w-5 h-5 rounded-full bg-white border-4 border-slate-300 appearance-none cursor-pointer focus:ring-0 outline-none transition-all duration-200" id="toggle3" name="toggle" type="checkbox"/>
+
+<label class="toggle-label block overflow-hidden h-5 rounded-full bg-slate-300 cursor-pointer" for="toggle3"></label>
+
+</div>
+
+</div>
+
+<div class="flex items-center justify-between pt-2 border-t border-slate-100 dark:border-slate-800">
+
+<div class="flex flex-col">
+
+<span class="text-[10px] text-slate-400 font-bold uppercase tracking-tighter">Duration</span>
+
+<span class="text-sm font-semibold text-slate-700 dark:text-slate-300">30 mins</span>
+
+</div>
+
+<div class="flex flex-col text-right">
+
+<span class="text-[10px] text-slate-400 font-bold uppercase tracking-tighter">Price (VND)</span>
+
+<span class="text-sm font-extrabold text-primary">1.500.000</span>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="group service-card bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 relative">
+
+<div class="aspect-[4/3] w-full relative overflow-hidden">
+
+<img alt="Advanced Microneedling" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6qd0Gjth_TTC5f_PtmCMtuxRyI4XLHWrPzjLA2B8JtDt9_l3fun_R0AKoQYmmfXgg8Y7NvZy4W4nZ-ETZc8azMTY0GifUL53ZrbUJB1O_wpaiNBbJloguVntBJDpVYsAh6N3aKOPOCxr6ktS0aPsurtBIhL-PNx_wNnM84TwhiNFXKQPbB0MJJ6-7icdzU8bwwIaEw5Bhy_zLylO_kzSB64GatFY8wBaXOCVaW4ZtkqoBAnse4ziwOm4abJS_KygWyvJTbPAgr28"/>
+
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-3">
+
+<button class="size-10 rounded-full bg-white text-slate-900 flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
+
+<span class="material-symbols-outlined text-xl">edit</span>
+
+</button>
+
+<button class="size-10 rounded-full bg-white text-slate-900 flex items-center justify-center hover:bg-red-500 hover:text-white transition-colors">
+
+<span class="material-symbols-outlined text-xl">delete</span>
+
+</button>
+
+</div>
+
+</div>
+
+<div class="p-5 space-y-4">
+
+<div class="flex justify-between items-start">
+
+<div>
+
+<span class="px-2 py-0.5 rounded-md text-[10px] font-bold uppercase tracking-wider bg-orange-100 text-orange-600 dark:bg-orange-900/30 dark:text-orange-400">Treatment</span>
+
+<h4 class="font-bold text-slate-900 dark:text-white mt-1 group-hover:text-primary transition-colors">Advanced Microneedling</h4>
+
+</div>
+
+<div class="relative inline-block w-10 align-middle select-none transition duration-200 ease-in">
+
+<input checked="" class="toggle-checkbox absolute block w-5 h-5 rounded-full bg-white border-4 border-slate-300 appearance-none cursor-pointer focus:ring-0 outline-none transition-all duration-200" id="toggle4" name="toggle" type="checkbox"/>
+
+<label class="toggle-label block overflow-hidden h-5 rounded-full bg-slate-300 cursor-pointer" for="toggle4"></label>
+
+</div>
+
+</div>
+
+<div class="flex items-center justify-between pt-2 border-t border-slate-100 dark:border-slate-800">
+
+<div class="flex flex-col">
+
+<span class="text-[10px] text-slate-400 font-bold uppercase tracking-tighter">Duration</span>
+
+<span class="text-sm font-semibold text-slate-700 dark:text-slate-300">75 mins</span>
+
+</div>
+
+<div class="flex flex-col text-right">
+
+<span class="text-[10px] text-slate-400 font-bold uppercase tracking-tighter">Price (VND)</span>
+
+<span class="text-sm font-extrabold text-primary">2.800.000</span>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</main>
+
+</div>
+
+<div class="fixed inset-0 z-50 flex items-center justify-center p-4 modal-overlay hidden" id="add-service-modal">
+
+<div class="bg-white dark:bg-slate-900 w-full max-w-2xl rounded-3xl shadow-2xl border border-slate-200 dark:border-slate-800 overflow-hidden">
+
+<div class="p-6 border-b border-slate-100 dark:border-slate-800 flex items-center justify-between">
+
+<h3 class="text-xl font-bold text-slate-900 dark:text-white">Add New Service</h3>
+
+<button class="p-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full transition-colors text-slate-400" onclick="document.getElementById('add-service-modal').classList.add('hidden')">
+
+<span class="material-symbols-outlined">close</span>
+
+</button>
+
+</div>
+
+<div class="p-8 grid grid-cols-1 md:grid-cols-2 gap-8 max-h-[80vh] overflow-y-auto custom-scrollbar">
+
+<div class="space-y-4">
+
+<label class="text-sm font-bold text-slate-900 dark:text-white">Upload Cover Image</label>
+
+<div class="border-2 border-dashed border-slate-200 dark:border-slate-700 rounded-2xl aspect-[4/3] flex flex-col items-center justify-center gap-3 bg-slate-50 dark:bg-slate-800/50 group cursor-pointer hover:border-primary/50 hover:bg-primary/5 transition-all">
+
+<span class="material-symbols-outlined text-4xl text-slate-400 group-hover:text-primary group-hover:scale-110 transition-all">cloud_upload</span>
+
+<div class="text-center px-4">
+
+<p class="text-xs font-bold text-slate-700 dark:text-slate-300">Drag and drop file</p>
+
+<p class="text-[10px] text-slate-400 mt-1">Recommended: 800x600px High-Res Clinical Photo</p>
+
+</div>
+
+</div>
+
+<div class="flex items-center gap-3 p-3 bg-slate-50 dark:bg-slate-800/30 rounded-xl border border-slate-100 dark:border-slate-800">
+
+<div class="size-10 rounded-lg bg-slate-200 overflow-hidden shrink-0">
+
+<img alt="Preview" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDOu7Z2qgP4koYjUaAQctPE979X4C-fUz9J2vjZqujr5GlEJLJO90S_tj7n0iAMApBdMpNv29hMZjg05vu1J9-lWsTd5dOxGRnCsFwe6_uVRPcq9FOifQcbHX-ld9K9W0Q4D1H2hqGNTBfXse6JLocVMZKcW7ncOUw09Rd2rDs92hbmcjY-LB02uFy77afaTQnulfH5OBTDSJNImsQIHHPbO-aOV2V17nMvP97cLIIUqPLh_GMUHjdmpWokiGt4EEnw_jLHwkTmYjQ"/>
+
+</div>
+
+<div class="flex-1 min-w-0">
+
+<p class="text-xs font-bold truncate text-slate-700 dark:text-slate-300">hydra_facial_01.jpg</p>
+
+<p class="text-[10px] text-slate-400">1.2 MB • Ready to upload</p>
+
+</div>
+
+<button class="text-slate-400 hover:text-red-500">
+
+<span class="material-symbols-outlined text-xl">delete</span>
+
+</button>
+
+</div>
+
+</div>
+
+<div class="space-y-6">
+
+<div class="space-y-2">
+
+<label class="text-sm font-bold text-slate-900 dark:text-white">Service Title</label>
+
+<input class="w-full h-11 px-4 bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 rounded-xl text-sm focus:ring-2 focus:ring-primary focus:border-transparent transition-all" placeholder="e.g. Advanced Microneedling" type="text"/>
+
+</div>
+
+<div class="grid grid-cols-1 gap-4">
+
+<div class="space-y-2">
+
+<label class="text-sm font-bold text-slate-900 dark:text-white">Category</label>
+
+<div class="relative group">
+
+<select class="w-full h-11 pl-4 pr-10 bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 rounded-xl text-sm focus:ring-2 focus:ring-primary focus:border-transparent appearance-none">
+
+<option disabled="" selected="" value="">Select category...</option>
+
+<option>Acne &amp; Clarity</option>
+
+<option>Anti-aging</option>
+
+<option>Rejuvenation</option>
+
+<option>Injectables</option>
+
+<option>Laser Treatments</option>
+
+</select>
+
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none">expand_more</span>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="grid grid-cols-2 gap-4">
+
+<div class="space-y-2">
+
+<label class="text-sm font-bold text-slate-900 dark:text-white">Duration (Mins)</label>
+
+<input class="w-full h-11 px-4 bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 rounded-xl text-sm focus:ring-2 focus:ring-primary focus:border-transparent transition-all" placeholder="60" type="number"/>
+
+</div>
+
+<div class="space-y-2">
+
+<label class="text-sm font-bold text-slate-900 dark:text-white">Price (VND)</label>
+
+<input class="w-full h-11 px-4 bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 rounded-xl text-sm focus:ring-2 focus:ring-primary focus:border-transparent transition-all" placeholder="1.500.000" type="text"/>
+
+</div>
+
+</div>
+
+<div class="space-y-2">
+
+<label class="text-sm font-bold text-slate-900 dark:text-white">Detailed Description</label>
+
+<textarea class="w-full p-4 bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 rounded-xl text-sm focus:ring-2 focus:ring-primary focus:border-transparent resize-none transition-all" placeholder="Provide clinical details and treatment benefits..." rows="3"></textarea>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="p-6 border-t border-slate-100 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-800/30 flex items-center justify-end gap-3 px-8">
+
+<button class="px-6 py-3 text-sm font-bold text-slate-500 hover:text-slate-900 dark:hover:text-white transition-colors" onclick="document.getElementById('add-service-modal').classList.add('hidden')">
+
+                Cancel
+
+            </button>
+
+<button class="px-10 py-3 bg-primary text-slate-900 font-extrabold rounded-full shadow-lg shadow-primary/20 hover:scale-[1.02] active:scale-[0.98] transition-all">
+
+                Save Service
+
+            </button>
+
+</div>
+
+</div>
+
+</div>
+
+
+</body></html>
+
